@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Instructor Directory</title>
+</head>
+
+<body>
+
+<div class="container">
+
+	<h3>Instructor Directory</h3>
+	<hr>
+	
+	<!-- Add a button -->
+	
+	
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>First Name</th>
+				
+				<th>Instructor Details</th>
+				
+				
+				<th>Action</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempEmployee : ${employees}">
+			
+	             <td th:text="${tempEmployee.firstName}" />	 
+	             
+				<td th:text="${tempEmployee.InstructorDetails}" />	
+				
+				
+					
+				
+				<!-- Add update button/link -->
+				<td>
+					<a th:href="@{/instructor/showFormForUpdate(employeeId=${tempEmployee.id})}"
+					   class="btn btn-info btn-sm">
+						Update
+					</a>
+					<hr>
+					
+					
+				</td>
+				
+				
+			</tr>
+		</tbody>		
+	</table>
+	
+</div>
+	
+</body>
+</html>
+
+
+
